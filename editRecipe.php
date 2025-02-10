@@ -1,5 +1,5 @@
 <?php
-require 'database.php';
+require 'db.php';
 require 'Classes/Recipe.php';
 
 $recipe = new Recipe($pdo);

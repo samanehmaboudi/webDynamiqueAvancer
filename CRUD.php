@@ -4,15 +4,15 @@ require 'Classes/Recipe.php';
 
 $recipe = new Recipe($pdo);
 
-// Vérifier quelle action est demandée
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         switch ($_POST['action']) {
-            case 'add': // Ajouter une recette
+            case 'add': 
                 $recipe->addRecipe($_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], $_POST['category_id'], $_POST['user_id']);
                 header("Location: index.php?message=Recette ajoutée avec succès");
                 exit();
-            case 'update': // Modifier une recette
+            case 'update': 
                 $recipe->updateRecipe($_POST['id'], $_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], $_POST['category_id']);
                 header("Location: index.php?message=Recette mise à jour avec succès");
                 exit();
@@ -20,14 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
-        // Supprimer une recette
         $recipe->deleteRecipe($_GET['id']);
         header("Location: index.php?message=Recette supprimée avec succès");
         exit();
     }
 }
 
-// Si aucune action spécifique, afficher la liste des recettes
+
 $recipes = $recipe->getAllRecipes();
 ?>
 <!DOCTYPE html>
