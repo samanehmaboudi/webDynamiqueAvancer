@@ -1,26 +1,75 @@
-
+/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    text-align: center;
 }
 
-h1 {
-    color: #333;
+h1, h2 {
+    color: #1e2329;
 }
 
-form {
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
     background: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Formulaires */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
 button {
-    background: #28a745;
+    background-color: #30955a;
     color: white;
     border: none;
     padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #4f54af;
+}
+
+/* Liste des recettes */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+li a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #1149c3;
+}
+
+li a:hover {
+    text-decoration: underline;
 }

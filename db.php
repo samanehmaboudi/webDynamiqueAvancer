@@ -2,7 +2,7 @@
 $host = "localhost";
 $dbname = "recipe_manager";
 $user = "root";
-$pass = "";
+$pass = "root";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
